@@ -1,1 +1,25 @@
-<p>lista works!</p>
+<div class="container">
+    <h1>lista de usuarios</h1>
+    <div class="row">
+        <div class="col-12">
+            <table class="table">
+                <thead>
+                    <th>ID</th>
+                    <th>EMAIL</th>
+                    <th>NOMBRE</th>
+                    <th>APELLIDO</th>
+                    <th>AVATAR</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let usuario of usuarios">
+                        <th>{{usuario.id}}</th>
+                        <th>{{usuario.email}}</th>
+                        <th>{{usuario.first_name}}</th>
+                        <th>{{usuario.last_name}}</th>
+                        <th>{{usuario.avatar}}</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
