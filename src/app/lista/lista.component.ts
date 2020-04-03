@@ -8,11 +8,11 @@ import {UsuariosService} from '../servicios/usuarios.service';
 })
 export class ListaComponent implements OnInit {
   usuarios:any;
-  constructor() { }
+  constructor(private datos:UsuariosService) { }
 
   ngOnInit(): void {
   }
   cargarLista(){
-
+    
   }
 }
