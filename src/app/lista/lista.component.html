@@ -1,23 +1,23 @@
 <!--{{usuarios.data|json}}-->
 <div class="container">
-    <h1>lista de usuarios</h1>
+    <h1 class="text-center font-weight-bold text-white ">Lista de usuarios</h1>
     <div class="row">
         <div class="col-12">
-            <table class="table">
+            <table class="table table-striped table-dark text-center">
                 <thead>
-                    <th>ID</th>
-                    <th>EMAIL</th>
-                    <th>NOMBRE</th>
-                    <th>APELLIDO</th>
-                    <th>Imagen de perfil</th>
+                    <th class="sticky-top bg-dark">ID</th>
+                    <th class="sticky-top bg-dark">EMAIL</th>
+                    <th class="sticky-top bg-dark">NOMBRE</th>
+                    <th class="sticky-top bg-dark">APELLIDO</th>
+                    <th class="sticky-top bg-dark">Imagen de perfil</th>
                 </thead>
                 <tbody>
                     <tr *ngFor="let usuario of usuarios.data">
-                        <th>{{usuario.id}}</th>
-                        <th>{{usuario.email}}</th>
-                        <th>{{usuario.first_name}}</th>
-                        <th>{{usuario.last_name}}</th>
-                        <th><img src="{{usuario.avatar}}"></th>
+                        <th class="align-middle">{{usuario.id}}</th>
+                        <th class="align-middle">{{usuario.email}}</th>
+                        <th class="align-middle">{{usuario.first_name}}</th>
+                        <th class="align-middle">{{usuario.last_name}}</th>
+                        <th class="align-middle"><img src="{{usuario.avatar}}"></th>
                     </tr>
                 </tbody>
             </table>
