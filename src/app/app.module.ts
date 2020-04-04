@@ -6,14 +6,16 @@ import {FormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListaComponent } from './lista/lista.component';
-
+import { AccesoComponent } from './acceso/acceso.component';
 //servicios
 import {UsuariosService} from './servicios/usuarios.service';
+import {UsuarioaccService} from './servicios/usuarioacc.service'
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListaComponent
+    ListaComponent,
+    AccesoComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +23,7 @@ import {UsuariosService} from './servicios/usuarios.service';
     HttpClientModule,
     FormsModule
   ],
-  providers: [UsuariosService],
+  providers: [UsuariosService, UsuarioaccService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
