@@ -1,4 +1,4 @@
-{{usuarios|json}}
+<!--{{usuarios.data|json}}-->
 <div class="container">
     <h1>lista de usuarios</h1>
     <div class="row">
@@ -9,15 +9,15 @@
                     <th>EMAIL</th>
                     <th>NOMBRE</th>
                     <th>APELLIDO</th>
-                    <th>AVATAR</th>
+                    <th>Imagen de perfil</th>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let usuario of usuarios">
+                    <tr *ngFor="let usuario of usuarios.data">
                         <th>{{usuario.id}}</th>
                         <th>{{usuario.email}}</th>
                         <th>{{usuario.first_name}}</th>
                         <th>{{usuario.last_name}}</th>
-                        <th>{{usuario.avatar}}</th>
+                        <th><img src="{{usuario.avatar}}"></th>
                     </tr>
                 </tbody>
             </table>

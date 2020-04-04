@@ -8,7 +8,8 @@ import { Observable } from 'rxjs';
 export class UsuariosService {
 
   constructor(private linkjson:HttpClient) {}
+
   obtenerDatos(): Observable<any>{
-    return this.linkjson.get("https://reqres.in/api/users")
+    return this.linkjson.get("https://reqres.in/api/users");
   }
 }

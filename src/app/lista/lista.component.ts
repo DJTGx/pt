@@ -8,11 +8,19 @@ import {UsuariosService} from '../servicios/usuarios.service';
 })
 export class ListaComponent implements OnInit {
   usuarios:any;
-  constructor(private datos:UsuariosService) { }
-
-  ngOnInit(): void {
+  constructor(private cargarDatos: UsuariosService) { 
+    this.cargarLista();
   }
   cargarLista(){
-    
+    this.usuarios=this.cargarDatos.obtenerDatos().subscribe(resultado=>{
+        this.usuarios=resultado;
+      },
+      error=>{
+        console.log(JSON.stringify(error));
+      }
+    );
+  }
+  ngOnInit(): void {
+    this.cargarLista();
   }
 }
