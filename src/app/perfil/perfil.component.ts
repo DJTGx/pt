@@ -12,8 +12,7 @@ export class PerfilComponent implements OnInit {
   constructor(private datosP:UsuarioaccService) { }
   
   ngOnInit(): void {
-    //this.datosPerfil=this.datosP.validarTU();
-    console.log(this.datosPerfil);
+    this.datosPerfil=this.datosP.datosSesion();
   }
 
 }
