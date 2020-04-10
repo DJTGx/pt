@@ -1,1 +1,26 @@
-<p>acceso works!</p>
+<div class="container d-flex justify-content-center text-white">
+    <form class="col-4 border rounded-lg" [formGroup]="datosform" (submit)="acceder(datosform)">
+        <h3 class="">Por Favor Inicie sesion</h3>
+        <div class="form-group ">
+            <label for="controlE">Email</label>
+            <input type="email" formControlName="eform" class="form-control" placeholder="Email" id="eform">
+            <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+            <div class="errorcodigo text-danger" *ngIf="datosform.controls.eform.errors">
+                el correo tiene un error de escritura
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="controlC">Contraseña</label>
+            <input type="password" formControlName="pform" class="form-control" placeholder="Contraseña" id="pform">
+            <div class="errorcodigo text-danger" *ngIf="datosform.controls.pform.errors">
+                Debe ingresar la contraseña Obligatoriamente
+            </div>
+        </div>
+        <div class="errorcodigo text-danger text-center" *ngIf="error">
+            {{error}}
+        </div>
+        <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary">Iniciar secion</button>
+        </div>
+    </form>
+</div>

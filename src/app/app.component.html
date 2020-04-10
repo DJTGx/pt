@@ -1,1 +1,43 @@
-<app-lista></app-lista>
+<nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
+    <a class="navbar-brand" [routerLink]="['/']">
+        <img src="../assets/img/icon/logo.png" width="30" height="30" alt="">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" [routerLink]="['/']">Inicio <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dashboards
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" [routerLink]="['/lista']">lista de usuarios</a>
+                </div>
+            </li>
+        </ul>
+        <ul class="navbar-nav form-inline my-2 my-lg-0">
+            <div class="btn-group dropleft" role="group">
+                <li class="nav-item dropdown" *ngIf="bLogio=='LogOut' else in">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{datosUsuario.first_name}} {{datosUsuario.last_name}} <img src="{{datosUsuario.avatar}}" width="30" height="30" alt="">
+                    </button>
+                    <div class="dropdown-menu">
+                        <li class="nav-item active">
+                            <a class="nav-link" [routerLink]="['/perfil']">Ver Perfil<span class="sr-only">(current)</span></a>
+                        </li>
+                        <div class="dropdown-divider"></div>
+                        <button class="dropdown-item text-center" (click)="logout()">{{bLogio}}</button>
+                    </div>
+                </li>
+            </div>
+            <ng-template #in>
+                <button class="btn btn-outline-success my-2 my-sm-0" (click)="ModuloAcceso()">{{bLogio}}</button>
+            </ng-template>
+        </ul>
+    </div>
+</nav>
+<router-outlet></router-outlet>

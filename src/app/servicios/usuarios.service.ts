@@ -1,15 +1,17 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
-export class UsuariosService {
 
-  constructor(private linkjson:HttpClient) {}
+export class UsuariosService{
+
+  constructor(private linkjsona:HttpClient, private route:Router) {}
 
   obtenerDatos(): Observable<any>{
-    return this.linkjson.get("https://reqres.in/api/users");
+    return this.linkjsona.get("https://reqres.in/api/users");
   }
 }

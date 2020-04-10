@@ -1,0 +1,30 @@
+<div class="alert alert-danger" role="alert">
+    Aviso: En estos momentos no esta habilitado la edicion de Datos
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="container d-flex justify-content-center text-white">
+    <div class="col-4 border rounded-lg">
+        <h3 class="text-center">Mis Datos</h3>
+        <div class="form-group text-center">
+            <label for="controlE">Imagen de perfil</label><br>
+            <img src="{{datosPerfil.avatar}}">
+        </div>
+        <div class="form-group ">
+            <label for="controlE">Email</label>
+            <label class="form-control" id="controlE">{{datosPerfil.email}}</label>
+        </div>
+        <div class="form-group ">
+            <label for="controlE">Nombre</label>
+            <label class="form-control" id="controlE">{{datosPerfil.first_name}}</label>
+        </div>
+        <div class="form-group ">
+            <label for="controlE">Apellido</label>
+            <label class="form-control" id="controlE">{{datosPerfil.last_name}}</label>
+        </div>
+        <div class="d-flex justify-content-center">
+            <button type="button" class="btn btn-secondary btn-lg" disabled>Actualizar</button>
+        </div>
+    </div>
+</div>
